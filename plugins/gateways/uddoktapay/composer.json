@@ -1,0 +1,13 @@
+{
+    "name": "uddoktapay/clientexec-gateway",
+    "description": "UddoktaPay Payment Gateway for ClientExec",
+    "type": "clientexec-plugin",
+    "require": {
+        "php": ">=8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "UddoktaPay\\": "lib/"
+        }
+    }
+}
