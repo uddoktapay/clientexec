@@ -76,7 +76,8 @@ abstract class BaseCallback extends PluginCallback
                 return;
             }
         } elseif ($status === PaymentStatus::PENDING) {
-            // Payment is pending verification - redirect with pending message
+            $transaction = "$paymentMethod payment of $price is Pending for Verification (Order ID: " . $invoiceId . ")";
+            $cPlugin->PaymentPending($transaction);
             $returnURL = \CE_Lib::getSoftwareURL() . "/index.php?fuse=billing&pending=1&controller=invoice&view=invoice&id=" . $invoiceId;
             header("Location: " . $returnURL);
             exit;
